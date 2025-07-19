@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bank-transfer-service
+    env: node
+    region: oregon
+    rootDir: server
+    buildCommand: bash .render/build.sh
+    startCommand: npm run start
+    envVars:
+      - key: JWT_SECRET
+        value: SuperSecretKey2025
+    plan: free
+    autoDeploy: true
